@@ -7,34 +7,6 @@ import (
 	"time"
 )
 
-/*
-.----------------.
-| .--------------. |
-| |     __       | |
-| |    /  |      | |
-| |    `| |      | |
-| |     | |      | |
-| |    _| |_     | |
-| |   |_____|    | |
-| |              | |
-| '--------------' |
-
-	'----------------'
-
-	.----------------.
-
-| .--------------. |
-| |    _____     | |
-| |   / ___ `.   | |
-| |  |_/___) |   | |
-| |   .'____.'   | |
-| |  / /____     | |
-| |  |_______|   | |
-| |              | |
-| '--------------' |
-
-	'----------------'
-*/
 var (
 	one = []string{
 		".----------------.",
@@ -241,12 +213,12 @@ func main() {
 		tm.Println("Current Time:", time.Now().Format(time.RFC1123))
 		tm.Println("duration", total)
 		total = total - time.Second
-		process = process + "->"
-		tm.Println(process)
 
+		tm.Println(process)
+		process = process + "->"
 		tm.Println(PrintGraph(cnt))
 
-		if (*second-cnt)%10 == 0 {
+		if (*second-cnt+1)%10 == 0 {
 			process = ""
 		}
 		tm.Flush() // Call it every time at the end of rendering
