@@ -211,7 +211,7 @@ func main() {
 		// will be overwritten each time, instead of adding new.
 		tm.MoveCursor(1, 1)
 		tm.Println("Current Time:", time.Now().Format(time.RFC1123))
-		tm.Println("duration", total)
+		tm.Println(tm.Color("duration", cnt%8), total)
 		total = total - time.Second
 
 		tm.Println(process)
